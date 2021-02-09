@@ -32,7 +32,8 @@ function render(variables = {}) {
   let plastname = variables.plastname ? variables.plastname : "Boliet";
   let prole = variables.role;
   let pplace = variables.place + " " + variables.country;
-  let pposition = variables.socialMediaPosition;
+  let pposition = variables.socialMediaPosition 
+  ? variables.socialMediaPosition = "position-right" : "position-left";
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
@@ -40,7 +41,7 @@ function render(variables = {}) {
           <h1>${pname} ${plastname}</h1>
           <h2>${prole}</h2>
           <h3>${pplace}</h3>
-          <ul class="position-right">
+          <ul class="${pposition}">
             <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
             <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
             <li><a href="https://linkedin.com/alesanchezr"><i class="fa fa-linkedin"></i></a></li>
