@@ -30,8 +30,9 @@ function render(variables = {}) {
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
   let pname = variables.name ? variables.name : "Lucy";
   let plastname = variables.lastname ? variables.lastname : "Boliet";
-  let prole = variables.role;
-  let pplace = variables.city + " " + variables.country;
+  let prole = variables.role ? variables.role : "Web Developer";
+  let pcity = variables.city ? variables.city : "Miami";
+  let pcountry = variables.country ? variables.country : "USA";
   let pposition =
     variables.socialMediaPosition == "position-right"
       ? "position-right"
@@ -42,7 +43,7 @@ function render(variables = {}) {
           <img src="${variables.avatarURL}" class="photo" />
           <h1>${pname} ${plastname}</h1>
           <h2>${prole}</h2>
-          <h3>${pplace}</h3>
+          <h3>${pcity} ${pcountry}</h3>
           <ul class="${pposition}">
             <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
             <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
@@ -65,7 +66,7 @@ window.onload = function() {
     // this is the url for the profile avatar
     avatarURL: "https://randomuser.me/api/portraits/women/42.jpg",
     // social media bar position (left or right)
-    socialMediaPosition: "position-left",
+    socialMediaPosition: "position-right",
     // social media usernames
     twitter: null,
     github: "alesanchezr",
